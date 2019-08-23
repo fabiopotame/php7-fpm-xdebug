@@ -23,7 +23,3 @@ RUN apk --update add --no-cache php7-fpm php7-pear php7-dev php7-tokenizer php7-
 	&& docker-php-ext-install json \
 	&& rm -f /usr/src/php.tar.xz \
 	&& rm -f /tmp/xdebug-2.7.2.tgz
-
-EXPOSE 9000
-
-ENTRYPOINT ["/build/entrypoint.sh"]
