@@ -2,10 +2,6 @@ FROM alpine:3.8
 
 LABEL maintainer="Fabio Potame <fabiopotame@gmail.com>"
 
-COPY entrypoint.sh /build/entrypoint.sh
-
-RUN chmod +x /build/entrypoint.sh
-
 RUN apk --update add --no-cache php7-fpm php7-pear php7-dev php7-tokenizer php7-mbstring php7-dom build-base composer \
 	&& wget https://raw.githubusercontent.com/docker-library/php/master/7.3/alpine3.10/fpm/docker-php-entrypoint -O /usr/local/bin/docker-php-entrypoint \
 	&& wget https://raw.githubusercontent.com/docker-library/php/master/7.3/alpine3.10/fpm/docker-php-ext-configure -O /usr/local/bin/docker-php-ext-configure \
